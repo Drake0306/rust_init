@@ -59,6 +59,17 @@ fn main() {
     string = string.replace("Hello", "Bye");
     println!("{}", string);
 
+
+    // IF Statement
+    let n = 3;
+    if n > 0 {
+        println!("grater than 0");
+    } else if n < 0 {
+        println!("less than 0");
+    } else {
+        println!("is 0");
+    }
+
 }
 
 //functions
