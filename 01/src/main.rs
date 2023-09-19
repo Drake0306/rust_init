@@ -70,6 +70,28 @@ fn main() {
         println!("is 0");
     }
 
+
+    // For loop
+    for i in 0..6 {
+        println!("{}", i);
+    }
+
+    // while loop
+    let mut i = 0;
+    while i < 4 {
+        println!("{}", i);
+        i += 1;
+        if i == 3 {
+            println!("exit");
+            break
+
+            // break
+            // continue
+        }
+    }
+
+
+
 }
 
 //functions
