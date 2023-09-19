@@ -107,6 +107,11 @@ fn main() {
     bird.print_name();
 
 
+    // Traits
+    println!("{} {}", bird.can_fly(), bird.is_animal())
+
+
+
 }
 
 //functions
@@ -133,6 +138,25 @@ struct Bird {
 impl Bird {
     fn print_name(&self) {
         println!("{} , {}", self.name, self.attack);
+    }
+}
+
+
+// trait
+
+impl Animal for Bird {
+    fn can_fly(&self) -> bool {
+        true
+    }
+
+    fn is_animal(&self) -> bool {
+        false
+    }
+}
+trait Animal {
+    fn can_fly(&self) -> bool;
+    fn is_animal(&self) -> bool {
+        true
     }
 }
 
