@@ -1,3 +1,5 @@
+use std::collections::HashMap;
+
 fn main() {
     // dataTypes
     let unsigned: u8 = 10;
@@ -131,6 +133,27 @@ fn main() {
     vec.push(6);
     vec.remove(0);
     println!("{:?}", vec);
+
+
+    // Maps
+    let mut map = HashMap::new();
+
+    map.insert(0, "hi");
+    map.insert(1, "hi2");
+    println!("{:?}", map);
+
+    match map.get(&0) {
+        Some(str) => println!("{}", str), // some or 
+        _=> println!("Dosen't exist in map"), // none
+    }
+
+    match map.get(&2) {
+        Some(str) => println!("{}", str), // some or 
+        _=> println!("Dosen't exist in map"), // none
+    }
+
+    map.remove(&0);
+    println!("{:?}", map);
 
 }
 
