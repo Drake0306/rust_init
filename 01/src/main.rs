@@ -155,6 +155,14 @@ fn main() {
     map.remove(&0);
     println!("{:?}", map);
 
+
+    // Option
+    let divide1: Option<i32> = divide(4,2);
+    let divide2: Option<i32> = divide(2,3);
+
+    println!("{:?} unraps to {}",divide1, divide1.unwrap());
+    // println!("{:?} unraps to {}",divide2, divide2.unwrap()); // Unrapping a None type will throw a run time error
+
 }
 
 //functions
@@ -163,7 +171,7 @@ pub fn is_even(num: u8) -> bool {
     digit == 0 // return value
 }
 
-
+// slice and array
 fn borrowing_slice(arr: [u8; 4], slice: &[u8]) {
     println!("{:?}", arr);
     println!("{:?}", slice);
@@ -186,7 +194,6 @@ impl Bird {
 
 
 // trait
-
 impl Animal for Bird {
     fn can_fly(&self) -> bool {
         true
@@ -210,5 +217,15 @@ enum MyEnum {
     A,
     B(i32),
     C {x: i32, y: i32}
+}
+
+
+// Option
+fn divide (dividend: i32, divisor: i32) -> Option<i32> {
+    if dividend % divisor != 0 {
+        None
+    } else {
+        Some(dividend / divisor)
+    }
 }
 
