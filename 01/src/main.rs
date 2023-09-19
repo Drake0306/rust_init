@@ -47,10 +47,22 @@ fn main() {
     borrowing_slice(arr, slice);
 
 
+    // String
+    let str: &str = "Hello world";
+    let mut string: String = String::from("Hello world");
+
+    let slice_one = &string[.. 6];
+    println!("length {}", slice_one.len());
+    
+    string.push('1');
+    string.push_str("! Bob");
+    string = string.replace("Hello", "Bye");
+    println!("{}", string);
+
 }
 
 //functions
-pub fn is_even(num: u8) -> bool {
+pub fn is_even(num: u8) -> bool { 
     let digit: u8 = num % 2;
     digit == 0 // return value
 }
