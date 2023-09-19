@@ -108,8 +108,20 @@ fn main() {
 
 
     // Traits
-    println!("{} {}", bird.can_fly(), bird.is_animal())
+    println!("{} {}", bird.can_fly(), bird.is_animal());
 
+    // enums
+    let a: MyEnum = MyEnum::A;
+    let b: MyEnum = MyEnum::B(5);
+    let c: MyEnum = MyEnum::C{x:10, y:20};
+
+    if let MyEnum::B(val) = b {
+        println!("{}", val);
+    }
+
+    if let MyEnum::C { x, y } = c {
+        println!("{} {}", x, y);
+    }
 
 
 }
@@ -158,5 +170,14 @@ trait Animal {
     fn is_animal(&self) -> bool {
         true
     }
+}
+
+
+// enums
+#[derive(Debug)]
+enum MyEnum {
+    A,
+    B(i32),
+    C {x: i32, y: i32}
 }
 
