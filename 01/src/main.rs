@@ -163,6 +163,27 @@ fn main() {
     println!("{:?} unraps to {}",divide1, divide1.unwrap());
     // println!("{:?} unraps to {}",divide2, divide2.unwrap()); // Unrapping a None type will throw a run time error
 
+
+    // Result
+    let divide = divideOne(4, 2);
+    let res = divide.expect("we crashed");
+
+    // Error handelling method bellow
+
+    // match divide {
+    //     Ok(v) => println!("{}", v),
+    //     Err(v) => println!("{:?}", v)
+    // }
+
+    // if divide.is_ok() {
+    //     println!("{}", divide.unwrap());
+    // }
+
+    // println!("{}", divide.unwrap_or(100));
+    
+    println!("{}", res);
+
+
 }
 
 //functions
@@ -226,6 +247,20 @@ fn divide (dividend: i32, divisor: i32) -> Option<i32> {
         None
     } else {
         Some(dividend / divisor)
+    }
+}
+
+// Result
+
+#[derive(Debug)]
+enum MyError {
+    Error1
+}
+fn divideOne (dividend: i32, divisor: i32) -> Result<i32, MyError> {
+    if dividend % divisor != 0 {
+        Err(MyError::Error1)
+    } else {
+        Ok(dividend / divisor)
     }
 }
 
