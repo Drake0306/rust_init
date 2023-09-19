@@ -91,6 +91,21 @@ fn main() {
     }
 
 
+    //Match ! simmilar to switch but with more flexiblity
+    let i= 5;
+    match i {
+        0 => println!("0"),
+        1 | 2 => println!("1,2"),
+        3..=4 => println!("3,4"),
+        _ => println!("default")
+    }
+
+    
+    // Structs
+    let name  = String::from("Bird");
+    let bird = Bird { name: name, attack: 5};
+    bird.print_name();
+
 
 }
 
@@ -107,3 +122,17 @@ fn borrowing_slice(arr: [u8; 4], slice: &[u8]) {
     println!("length: {}", slice.len());
     println!("{} {}", slice[0], slice[1]);
 }
+
+
+// Structs
+struct Bird {
+    name: String,
+    attack: u64,
+}
+
+impl Bird {
+    fn print_name(&self) {
+        println!("{} , {}", self.name, self.attack);
+    }
+}
+
